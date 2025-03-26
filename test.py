@@ -5,15 +5,10 @@ def mask_dob(data):
     return data
 
 def _mask_field(data, mask_func):
-    if data and isinstance(data, str):
-        return mask_func()
     return data
 
 def mask_tfn(data):
     return _mask_field(data, lambda: random.choice(MASK_TFN_LIST))
-
-def mask_bsb(data):
-    return _mask_field(data, lambda: MASK_BSB)
 
 def mask_account_number(data):
     return _mask_field(data, lambda: MASK_ACCOUNT_NUMBER)
